@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
 
-class Node{
+class Node
+{
 public:
     int info;
-    Node * leftchild;
-    Node * rightchild;
+    Node *leftchild;
+    Node *rightchild;
 
-    //Constructor for the node class
+    // Constructor for the node class
     Node()
     {
-        leftchild = nullptr; // initialize left child to null
+        leftchild = nullptr;  // initialize left child to null
         rightchild = nullptr; // initialize right child to null
     }
 };
@@ -22,7 +23,7 @@ public:
 
     BinaryTree()
     {
-        ROOT = nullptr; //Initializing ROOT to null 
+        ROOT = nullptr; // Initializing ROOT to null
     }
 
     void insert()
@@ -34,7 +35,7 @@ public:
         // step 1: Allocate memory for the new node
         Node *newNode = new Node();
 
-        //Step 2: Assign value to the data field of new node
+        // Step 2: Assign value to the data field of new node
         newNode->info = x;
 
         // Step 3: Make the left and right child of the new node point to NULL
@@ -45,7 +46,7 @@ public:
         Node *parent = nullptr;
         Node *currentNode = nullptr;
         search(x, parent, currentNode);
-        
+
         // Step 5: If parent is NULL (Tree is empty)
         if (parent == nullptr)
         {
@@ -54,11 +55,24 @@ public:
 
             // 5b : Exit
             return;
+            // Step 6 : If the value in the data field of ne node is less than that of parent
+            if (x < parent->info)
+            {
+                // 6a : make the left child of parent point to the new node
+                parent->leftchild = newNode;
+
+                // 6b : Exit
+                return;
+            }
+
+            // Step 7 : if the value in the data field of the new node is greater than that of the parent
+            else if (x > parent->info)
+            {
+                // 7a : Make the right child of parent point to the ne node
+                parent->rightchild = newNode;
+
+                // 7b : Exit
+                return;
+            }
         }
-
-};
-
-int main(){
-
-    return 0;
-}
+    }
