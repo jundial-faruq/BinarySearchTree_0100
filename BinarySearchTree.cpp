@@ -91,5 +91,9 @@ public:
                 currentNode = currentNode->rightchild;
         }
     }
-    
-}
+    bool isEmpty()
+    {
+        // Check if the tree is empty
+        return ROOT = nullptr;
+    }
+  
