@@ -46,7 +46,42 @@ public:
         Node *currentNode = nullptr;
         search(x, parent, currentNode);
         
+        // Step 5: If parent is NULL (Tree is empty)
+        if (parent == nullptr)
+        {
+            // 5a Mark the new node as ROOT
+            ROOT = newNode;
 
+            // 5b : Exit
+            return;
+        }
+
+        // Step 6: If the value in the data field of new node is less than that of parent
+        if (x < parent->info)
+        {
+            // 6a: Make the left child of parent point to the new node
+            parent->leftchild = newNode;
+
+            // 6b: Exit
+            return;
+        }
+        
+        // Step7: If the value in the data field of the new node is greater than that of the parent
+        else if (x > parent->info)
+        {
+            // 7a: Make right child of parent point to the new node
+            parent->leftchild = newNode;
+
+            // 7b: Exit
+            return;
+        }
+        
+    }
+
+    void seacrh(int elemen, Node *&parent, Node *&CURRENTnODE)
+    {
+
+    }
 };
 
 int main(){
