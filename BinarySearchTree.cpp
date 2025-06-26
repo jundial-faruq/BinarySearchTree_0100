@@ -106,4 +106,22 @@ public:
         if (ptr == nullptr)
                 return;
 
-}
+        inorder(ptr->leftchild);
+        cout << ptr->info << " "; // parent
+        inorder(ptr->rightchild);
+    }
+    void preorder(Node *ptr)
+    {
+        if (isEmpty())
+        {
+            cout << "Tree is Empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+            return;
+
+        cout << ptr->info << " "; // parent
+        preorder(ptr->leftchild);
+        preorder(ptr->rightchild);
+    }
+   
