@@ -124,4 +124,18 @@ public:
         preorder(ptr->leftchild);
         preorder(ptr->rightchild);
     }
-   
+    void postorder(Node *ptr)
+    {
+        if (isEmpty())
+        {
+            cout << "Tree is Empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+            return;
+
+        cout << ptr->info << " "; // parent
+        postorder(ptr->leftchild);
+        postorder(ptr->rightchild);
+    }
+};
