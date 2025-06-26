@@ -7,6 +7,13 @@ public:
     Node * leftchild;
     Node * rightchild;
 
+    //Constructor for the node class
+    Node()
+    {
+        leftchild = nullptr; // initialize left child to null
+        rightchild = nullptr; // initialize right child to null
+    }
+};
 
 
 int main(){
